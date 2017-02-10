@@ -24,7 +24,7 @@
 #   page "/admin/*"
 # end
 
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
+# Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
@@ -40,35 +40,18 @@
 #   activate :livereload
 # end
 
+# Methods defined in the helpers block are available in templates
+# helpers do
+#   def some_helper
+#     "Helping"
+#   end
+# end
+
 activate :contentful do |f|
   f.space         = { contentful: 'yjy670yo2sik' }
-  f.access_token  = ENV['CONTETNFUL_API_KEY']
+  f.access_token  = 'f88ce3781e7897fb0386d7f0cccc19742368f6aef883552aaa0abb97a2049e00'
   f.cda_query     = { content_type: 'product', include: 1 }
   f.content_types = { product: 'product'}
-end
-
-data.contentful.product.each do |elem|
-  p = elem[1]
-  proxy "products/#{p.slug}.html", "product.html", locals: { product: p }, ignore: true
-end
-
-helpers do
-  def snipcart_button (p, text)
-    args = {
-            "class" => "snipcart-add-item button",
-            "data-item-id" => p.id,
-            "data-item-price" => p.price,
-            "data-item-name" => p.name,
-            "data-item-url" => current_page.url,
-            "data-item-max-quantity" =>  p.max_quantity,
-            "data-item-description" => p.description,
-            "data-item-image" => "http:#{p.image.url}"
-    }
-
-    content_tag :button, args do
-      text
-    end
-  end
 end
 
 set :css_dir, 'stylesheets'

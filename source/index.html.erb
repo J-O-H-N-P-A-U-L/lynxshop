@@ -1,29 +1,10 @@
 ---
-title: "The T-Rex VR Store: proudly powered by Contentful, Middleman & Snipcart"
+title: Welcome to Middleman
 ---
 
-<div class="row column text-center">
-  <h1>
-    The T-Rex VR Store
-  </h1>
-</div>
-
-<div class="row">
-    <% data.contentful.product.each do |elem| %>
-      <% p = elem[1] %>
-      <div class="small-6 columns">
-        <a href='<%= "products/#{p.slug}.html" %>'>
-          <%= image_tag p.image.url, class: "thumbnail" %>
-        </a>
-
-        <div>
-          <strong><%= p.name %></strong>
-        </div>
-
-        <div>
-          <%= number_to_currency(p.price, :unit => "$") %>
-        </div>
-
-      </div>
-    <% end %>
-</div>
+<div class="welcome">
+  <h1>Middleman is Watching</h1>
+  <p class="doc">
+    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
+  </p><!-- .doc -->
+</div><!-- .welcome -->
