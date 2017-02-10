@@ -50,8 +50,8 @@
 activate :contentful do |f|
   f.space         = { contentful: 'yjy670yo2sik' }
   f.access_token  = 'f88ce3781e7897fb0386d7f0cccc19742368f6aef883552aaa0abb97a2049e00'
-  f.cda_query     = { content_type: 'product', include: 1 }
-  f.content_types = { product: 'product'}
+ # f.cda_query     = { content_type: 'product', include: 1 }
+ # f.content_types = { product: 'product'}
 end
 
 set :css_dir, 'stylesheets'
