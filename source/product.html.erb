@@ -10,6 +10,7 @@ title: product.name
 
 <div class="row">
   <div class="large-6 small-12 columns text-center">
+    <%= image_tag product.image.url, class: "thumbnail" %>
     <br />
 
     <%= snipcart_button product, "Add to cart" %>
