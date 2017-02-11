@@ -50,7 +50,7 @@
 activate :contentful do |f|
   f.space         = { contentful: 'yjy670yo2sik' }
   f.access_token  = 'f88ce3781e7897fb0386d7f0cccc19742368f6aef883552aaa0abb97a2049e00'
-  f.cda_query     = { content_type: '2PqfXUJwE8qSYKuM0U6w8M' }
+  f.cda_query     = { content_type: '2PqfXUJwE8qSYKuM0U6w8M', include: 1 }
   f.content_types = { product: '2PqfXUJwE8qSYKuM0U6w8M'}
 end
 
