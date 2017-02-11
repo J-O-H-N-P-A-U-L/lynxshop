@@ -77,3 +77,8 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+data.contentful.product.each do |elem|
+  p = elem[1]
+  proxy "products/#{p.slug}.html", "product.html", locals: { product: p }, ignore: true
+end
