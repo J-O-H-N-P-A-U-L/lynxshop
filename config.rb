@@ -78,24 +78,6 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-helpers do
-  def snipcart_button (p, text)
-    args = {
-        "class":"snipcart-add-item",
-        "data-item-id": p.id,
-        "data-item-price": p.price,
-        "data-item-name": p.name,
-        "data-item-url": current_page.url,
-        "data-item-max-quantity": p.max_quantity,
-        "data-item-description": p.description,
-        "data-item-image": "http:#{p.image.url}"
-    }
-
-    content_tag :button, args do
-      text
-    end
-  end
-end
 
 data.contentful.product.each do |elem|
   p = elem[1]
