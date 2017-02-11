@@ -2,20 +2,3 @@
 title: product.name
 ---
 
-<div class="row">
-  <div class="large-6 small-12 columns text-center">
-    <%= image_tag data.contentful.product.image.url %>
-
-    <%= snipcart_button product, "Add to cart" %>
-  </div>
-
-  <div class="large-6 small-12 columns">
-    <h1>
-      <%= data.contentful.product.name %>
-    </h1>
-
-    <p>
-      <%= data.contentful.product.description %>
-    </p>
-  </div>
-</div>
