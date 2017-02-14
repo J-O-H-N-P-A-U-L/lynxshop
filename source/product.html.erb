@@ -10,10 +10,10 @@ title: product.name
 
 <div class="row">
   <div class="large-6 small-12 columns text-center">
-    <%= image_tag product.image, class: "thumbnail" %>
+    <% product.image.each do |image| -%>
+        <%= image_tag(image.url, :alt => image.title, class: "thumbnail")%>
+    <% end -%>
     <br />
-
-
   </div>
 
   <div class="large-6 small-12 columns">

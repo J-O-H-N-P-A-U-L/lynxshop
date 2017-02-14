@@ -15,7 +15,9 @@ title: My awesome website
         <% p = elem[1] %>
         <li>
           <a href='<%= "products/#{p.slug}.html" %>'>
-            <%= image_tag p.image %>
+            <% p.image.each do |image| -%>
+                <%= image_tag(image.url, :alt => image.title) %>
+            <% end -%>
           </a>
 
           <div>
