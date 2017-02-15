@@ -1,10 +1,10 @@
 ---
-title: product.name
+title: product.productName
 ---
 
 <div class="row text-center column">
     <h1>
-      <%= product.name %>
+      <%= product.productName %>
     </h1>
 </div>
 
@@ -20,11 +20,13 @@ title: product.name
     <p>
       <%= product.productDescription %>
     </p>
-    <!-- Include Snipcart -->
-    <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
-                                :id => "snipcart",
-                                :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
   </div>
+
+  <!-- Include Snipcart -->
+  <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
+                              :id => "snipcart",
+                              :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
+
 </div>
 
 
