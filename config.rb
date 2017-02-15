@@ -92,11 +92,10 @@ helpers do
         "class":"snipcart-add-item",
         "data-item-id": p.id,
         "data-item-price": p.price,
-        "data-item-name": p.name,
+        "data-item-name": p.productName,
         "data-item-url": current_page.url,
-        "data-item-max-quantity": p.max_quantity,
-        "data-item-description": p.description,
-        "data-item-image": "http:#{p.image.url}"
+        "data-item-max-quantity": p.quantity,
+        "data-item-description": p.productDescription
     }
 
     content_tag :button, args do
