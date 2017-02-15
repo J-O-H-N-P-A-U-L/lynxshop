@@ -14,15 +14,15 @@ title: product.productName
         <%= image_tag(image.url, :alt => image.title, class: "thumbnail")%>
     <% end -%>
     <br />
-    <div>
-      <%= number_to_currency(product.price, :unit => "$") %>
-    </div>
   </div>
 
   <div class="large-6 small-12 columns">
     <p>
       <%= product.productDescription %>
     </p>
+    <div>
+      <%= number_to_currency(product.price, :unit => "$") %>
+    </div>
   </div>
 
   <!-- Include Snipcart -->
