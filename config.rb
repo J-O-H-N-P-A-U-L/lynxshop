@@ -83,15 +83,12 @@ if data.respond_to? :contentful
   data.contentful.product.each do |elem|
     p = elem[1]
     proxy "products/#{p.slug}.html", "product.html", locals: { product: p }, ignore: true
-    p['image'].each do |image|
-      # My guess is you are going to use `region` inside this block
-      self.create!
-    end
+    i = p.image
   end
 end
 
 helpers do
-  def snipcart_button (p, text)
+  def snipcart_button (p, i, text)
     args = {
         "class" => "snipcart-add-item button",
         "data-item-id" => p.id,
@@ -100,7 +97,7 @@ helpers do
         "data-item-url" => current_page.url,
         "data-item-max-quantity" =>  p.quantity,
         "data-item-description" => p.productDescription,
-        "data-item-image" => "http:#{p.image.url}"
+        "data-item-image" => "http:#{i.url}"
     }
 
     content_tag :button, args do
