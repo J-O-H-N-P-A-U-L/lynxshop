@@ -18,8 +18,12 @@ title: product.name
 
   <div class="large-6 small-12 columns">
     <p>
-      <%= product.description %>
+      <%= product.productDescription %>
     </p>
+    <!-- Include Snipcart -->
+    <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
+                                :id => "snipcart",
+                                :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
   </div>
 </div>
 

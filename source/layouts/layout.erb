@@ -25,10 +25,7 @@
   </nav>
     <%= yield %>
 
-  <!-- Include Snipcart -->
-  <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
-                              :id => "snipcart",
-                              :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
+
   <%= stylesheet_link_tag "https://app.snipcart.com/themes/base/snipcart.css" %>
     <!-- Include jQuery -->
     <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" %>
