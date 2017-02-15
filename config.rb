@@ -95,7 +95,8 @@ helpers do
         "data-item-name": p.productName,
         "data-item-url": current_page.url,
         "data-item-max-quantity": p.quantity,
-        "data-item-description": p.productDescription
+        "data-item-description": p.productDescription,
+        "data-item-image": "http:#{p.image.url}"
     }
 
     content_tag :button, args do
