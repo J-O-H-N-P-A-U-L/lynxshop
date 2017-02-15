@@ -49,8 +49,8 @@
 
 
 activate :contentful do |f|
-  f.space         = { contentful: 'yjy670yo2sik' } { contentful: ENV['CONTENTFUL_SPACE_ID'] }
-  f.access_token  = ENV['CONTENTFUL_API_KEY'] 'f88ce3781e7897fb0386d7f0cccc19742368f6aef883552aaa0abb97a2049e00'
+  f.space         = { contentful: ENV['CONTENTFUL_SPACE_ID'] }
+  f.access_token  = ENV['CONTENTFUL_API_KEY']
   f.cda_query     = { content_type: ENV['CONTENTFUL_CONTENT_TYPE'], include: 1 }
   f.content_types = { product: ENV['CONTENTFUL_CONTENT_TYPE']}
 
