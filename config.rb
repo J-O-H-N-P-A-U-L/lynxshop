@@ -83,7 +83,6 @@ if data.respond_to? :contentful
   data.contentful.product.each do |elem|
     p = elem[1]
     proxy "products/#{p.slug}.html", "product.html", locals: { product: p }, ignore: true
-    i = p.image
   end
 end
 
@@ -96,8 +95,7 @@ helpers do
         "data-item-name" => p.productName,
         "data-item-url" => current_page.url,
         "data-item-max-quantity" =>  p.quantity,
-        "data-item-description" => p.productDescription,
-        "data-item-image" => "http:#{i.url}"
+        "data-item-description" => p.productDescription
     }
 
     content_tag :button, args do
