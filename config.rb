@@ -53,8 +53,6 @@ activate :contentful do |f|
   f.access_token  = ENV['CONTENTFUL_API_KEY']
   f.cda_query     = { content_type: ENV['CONTENTFUL_CONTENT_TYPE'], include: 1 }
   f.content_types = { product: ENV['CONTENTFUL_CONTENT_TYPE']}
-
-
 end
 
 set :css_dir, 'stylesheets'
