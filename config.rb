@@ -47,6 +47,7 @@
 #   end
 # end
 
+
 activate :contentful do |f|
   f.space         = { contentful: 'yjy670yo2sik' }
   f.access_token  = 'f88ce3781e7897fb0386d7f0cccc19742368f6aef883552aaa0abb97a2049e00'
@@ -78,8 +79,11 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-
-data.contentful.product.each do |elem|
-  p = elem[1]
-  proxy "products/#{p.slug}.html", "product.html", locals: { product: p }, ignore: true
+if data.respond_to? :contentful
+  data.contentful.product.each do |elem|
+    p = elem[1]
+    proxy "products/#{p.slug}.html", "product.html", locals: { product: p }, ignore: true
+  end
 end
+
+
