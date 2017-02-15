@@ -87,7 +87,7 @@ if data.respond_to? :contentful
 end
 
 helpers do
-  def snipcart_button (p, i, text)
+  def snipcart_button (p, text)
     args = {
         "class" => "snipcart-add-item button",
         "data-item-id" => p.id,
@@ -103,3 +103,4 @@ helpers do
     end
   end
 end
+
