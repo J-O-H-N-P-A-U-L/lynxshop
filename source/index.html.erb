@@ -33,7 +33,7 @@ title: My awesome website
       <% p = elem[1] %>
       <div class="column">
         <% p.image.each do |image| -%>
-            <%= image_tag(image.url, :alt => image.title, :class => "thumbnail") %>
+            <%= image_tag(image.url, :alt => image.title, :class => "thumbnail", :width => "300px", :height => "400px") %>
         <% end -%>
         <h5><%= p.productName %></h5>
         <p><%= number_to_currency(p.price, :unit => "$") %></p>
