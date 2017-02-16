@@ -8,10 +8,15 @@ title: My awesome website
   </h1>
 </div>
 
+<div class="row">
+
+
+
 <div class="product-wrapper">
   <% data.contentful.product.each do |elem| %>
+      <% p = elem[1] %>
   <div class="product-tile">
-    <a href="">
+    <a href="<%= 'products/#{p.slug}.html' %>">
       <div class="overlay"></div>
       <div class="button">
         view
@@ -30,5 +35,7 @@ title: My awesome website
     </a>
   </div>
   <% end %>
+</div>
+
 </div>
 
