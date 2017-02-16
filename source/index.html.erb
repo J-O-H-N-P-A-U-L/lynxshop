@@ -2,36 +2,6 @@
 title: My awesome website
 ---
 
-<div class="row">
-  <h1>
-    Products
-  </h1>
-</div>
-
-<div class="row">
-    <% data.contentful.product.each do |elem| %>
-        <% p = elem[1] %>
-        <div class="small-6 columns">
-          <a href='<%= "products/#{p.slug}.html" %>'>
-            <% p.image.each do |image| -%>
-                <%= image_tag(image.url, :alt => image.title, :class => "thumbnail") %>
-            <% end -%>
-          </a>
-
-          <div>
-            <strong><%= p.productName %></strong>
-          </div>
-
-          <div>
-            <%= number_to_currency(p.price, :unit => "$") %>
-          </div>
-
-        </div>
-    <% end %>
-</div>
----
-title: My awesome website
----
 <!--
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
   <ul class="orbit-container">
