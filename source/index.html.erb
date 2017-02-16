@@ -8,29 +8,8 @@ title: My awesome website
   </h1>
 </div>
 
-<div class="row">
-    <% data.contentful.product.each do |elem| %>
-        <% p = elem[1] %>
-        <div class="small-6 columns">
-          <a href='<%= "products/#{p.slug}.html" %>'>
-            <% p.image.each do |image| -%>
-                <%= image_tag(image.url, :alt => image.title, :class => "thumbnail") %>
-            <% end -%>
-          </a>
-
-          <div>
-            <strong><%= p.productName %></strong>
-          </div>
-
-          <div>
-            <%= number_to_currency(p.price, :unit => "$") %>
-          </div>
-
-        </div>
-    <% end %>
-</div>
-
 <div class="product-wrapper">
+  <% data.contentful.product.each do |elem| %>
   <div class="product-tile">
     <a href="">
       <div class="overlay"></div>
@@ -38,49 +17,18 @@ title: My awesome website
         view
       </div>
       <div class="inner-wrap">
-        <img src="http://i.imgur.com/UqINpzx.jpg">
+        <% p.image.each do |image| -%>
+            <%= image_tag(image.url, :alt => image.title) %>
+        <% end -%>
         <div class="product-meta">
           <span class="product-title">
-            Analog Greed Jacket
+            <%= p.productName %>
           </span>
-          <span class="product-price">$161.95</span>
+          <span class="product-price"><%= number_to_currency(p.price, :unit => "$") %></span>
         </div>
       </div>
     </a>
   </div>
-  <div class="product-tile">
-    <a href="">
-      <div class="overlay"></div>
-      <div class="button">
-        view
-      </div>
-      <div class="inner-wrap">
-        <img src="http://i.imgur.com/UvJkrmH.jpg">
-        <div class="product-meta">
-          <span class="product-title">
-            Analog Greed Jacket
-          </span>
-          <span class="product-price">$161.95</span>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="product-tile">
-    <a href="">
-      <div class="overlay"></div>
-      <div class="button">
-        view
-      </div>
-      <div class="inner-wrap">
-        <img src="http://i.imgur.com/jMxw5LE.jpg">
-        <div class="product-meta">
-          <span class="product-title">
-            Analog Greed Jacket
-          </span>
-          <span class="product-price">$161.95</span>
-        </div>
-      </div>
-    </a>
-  </div>
+  <% end %>
 </div>
 
