@@ -48,6 +48,10 @@ title: My awesome website
         <%= snipcart_button p, "buy" %>
       </div>
   <% end %>
+  <!-- Include Snipcart -->
+  <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
+                              :id => "snipcart",
+                              :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
 </div>
 
 <hr>
