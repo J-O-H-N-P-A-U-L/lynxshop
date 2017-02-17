@@ -9,19 +9,15 @@
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= current_page.data.title || "The Middleman" %></title>
 
-  <!-- Include jQuery -->
-  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" %>
+
 
   <!-- Include Foundation -->
   <%= stylesheet_link_tag "//cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css" %>
   <!-- Insert this within your head tag and after foundation.css -->
-  <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.2/motion-ui.min.css" %>
-  <%= javascript_include_tag "//cdn.jsdelivr.net/foundation/6.1.2/foundation.min.js" %>
-  <script>
-      $(document).foundation();
-  </script>
+  <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" %>
+  <!-- Include Custom Styles -->
   <%= stylesheet_link_tag "normalize" %>
-  <%= javascript_include_tag  "all" %>
+
 </head>
 
 <body class="<%= page_classes %>">
@@ -39,10 +35,48 @@
   <%= yield %>
 </section>
 
-<!-- Include Snipcart -->
-<%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
-                            :id => "snipcart",
-                            :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
-<%= stylesheet_link_tag "https://app.snipcart.com/themes/base/snipcart.css" %>
+<div class="callout large secondary">
+  <div class="row">
+    <div class="large-4 columns">
+      <h5>Vivamus Hendrerit Arcu Sed Erat Molestie</h5>
+      <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit.</p>
+
+    </div>
+    <div class="large-3 large-offset-2 columns">
+      <ul class="menu vertical">
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li><a href="#">Four</a></li>
+      </ul>
+    </div>
+    <div class="large-3 columns">
+      <ul class="menu vertical">
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li><a href="#">Four</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Include jQuery -->
+  <%= javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js" %>
+  <!-- Include Foundation -->
+  <%= javascript_include_tag "//dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js" %>
+  <script>
+      $(document).foundation();
+  </script>
+  <!-- Include zcom -->
+  <%= javascript_include_tag "//intercom.zurb.com/scripts/zcom.js" %>
+  <!-- Include Snipcart -->
+  <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
+                              :id => "snipcart",
+                              :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
+  <%= stylesheet_link_tag "https://app.snipcart.com/themes/base/snipcart.css" %>
+  <%= javascript_include_tag  "all" %>
+
+</div>
+
+
 </body>
 </html>
