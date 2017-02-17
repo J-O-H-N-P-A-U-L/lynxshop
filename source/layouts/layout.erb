@@ -1,20 +1,18 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= current_page.data.title || "The Middleman" %></title>
   <!-- Include Foundation -->
   <%= stylesheet_link_tag "//cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css" %>
   <!-- Insert this within your head tag and after foundation.css -->
+  <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" %>
+  <!-- Insert this within your head tag and after foundation.css -->
   <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" %>
   <!-- Include Custom Styles -->
   <%= stylesheet_link_tag "normalize" %>
-
-  <!-- Insert this within your head tag and after foundation.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" />
-
 </head>
 <body class="<%= page_classes %>">
 <!-- Start Top Bar -->
@@ -45,7 +43,9 @@
   <div class="row">
     <div class="large-4 columns">
       <h5>Vivamus Hendrerit Arcu Sed Erat Molestie</h5>
-      <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit.</p>
+      <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet
+        arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie
+        augue sit.</p>
 
     </div>
     <div class="large-3 large-offset-2 columns">
@@ -76,10 +76,10 @@
 <!-- Include zcom -->
 <%= javascript_include_tag "//intercom.zurb.com/scripts/zcom.js" %>
 <!-- Include Snipcart -->
-<%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
-                            :id => "snipcart",
-                            :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
+<%= javascript_include_tag "https://app.snipcart.com/scripts/snipcart.js",
+                           :id => "snipcart",
+                           :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
 <%= stylesheet_link_tag "https://app.snipcart.com/themes/base/snipcart.css" %>
-<%= javascript_include_tag  "all" %>
+<%= javascript_include_tag "all" %>
 </body>
 </html>
