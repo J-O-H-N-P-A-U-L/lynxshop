@@ -62,22 +62,21 @@
       </ul>
     </div>
   </div>
-  <!-- Include jQuery -->
-  <%= javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js" %>
-  <!-- Include Foundation -->
-  <%= javascript_include_tag "//dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js" %>
-  <script>
-      $(document).foundation();
-  </script>
-  <!-- Include zcom -->
-  <%= javascript_include_tag "//intercom.zurb.com/scripts/zcom.js" %>
-  <!-- Include Snipcart -->
-  <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
-                              :id => "snipcart",
-                              :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
-  <%= stylesheet_link_tag "https://app.snipcart.com/themes/base/snipcart.css" %>
-  <%= javascript_include_tag  "all" %>
-
 </div>
+<!-- Include jQuery -->
+<%= javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js" %>
+<!-- Include Foundation -->
+<%= javascript_include_tag "//dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js" %>
+<script>
+    $(document).foundation();
+</script>
+<!-- Include zcom -->
+<%= javascript_include_tag "//intercom.zurb.com/scripts/zcom.js" %>
+<!-- Include Snipcart -->
+<%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
+                            :id => "snipcart",
+                            :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
+<%= stylesheet_link_tag "https://app.snipcart.com/themes/base/snipcart.css" %>
+<%= javascript_include_tag  "all" %>
 </body>
 </html>
