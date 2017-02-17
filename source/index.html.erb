@@ -37,7 +37,7 @@ title: My awesome website
   <% data.contentful.product.each do |elem| %>
       <% p = elem[1] %>
       <div class="column">
-        <a href='<%= "products/#{p.slug}.html" %>' class="button expanded">
+        <a href='<%= "products/#{p.slug}.html" %>'>
           <% p.image.each do |image| -%>
               <%= image_tag(image.url, :alt => image.title, :class => "thumbnail") %>
           <% end -%>
