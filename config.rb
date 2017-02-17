@@ -89,7 +89,7 @@ end
 helpers do
   def snipcart_button (p, text)
     args = {
-        "class" => "button expanded",
+        "class" => "snipcart-add-item button expanded",
         "data-item-id" => p.id,
         "data-item-price" => p.price,
         "data-item-name" => p.productName,
