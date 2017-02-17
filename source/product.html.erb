@@ -25,12 +25,6 @@ title: product.productName
       <%= number_to_currency(product.price, :unit => "$") %>
     </div>
   </div>
-
-  <!-- Include Snipcart -->
-  <%= javascript_include_tag  "https://app.snipcart.com/scripts/snipcart.js",
-                              :id => "snipcart",
-                              :"data-api-key" => ENV["SNIPCART_API_KEY"] %>
-
 </div>
 
 

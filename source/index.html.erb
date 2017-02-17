@@ -44,7 +44,8 @@ title: My awesome website
         </a>
         <h5><%= p.productName %></h5>
         <p><%= number_to_currency(p.price, :unit => "$") %></p>
-        <a href='<%= "products/#{p.slug}.html" %>' class="button expanded">Buy</a>
+       <!-- <a href='<%= "products/#{p.slug}.html" %>' class="button expanded">Buy</a> -->
+        <%= snipcart_button product, "buy" %>
       </div>
   <% end %>
 </div>
