@@ -20,7 +20,7 @@ title: product.productName
   <div class="medium-6 columns">
     <!-- <img class="thumbnail" src="http://placehold.it/650x350"> -->
     <% product.image.each do |image| -%>
-        <%= image_tag(image.url, :alt => image.title, width: "350px", height: "650px")%>
+        <%= image_tag(image.url, :alt => image.title)%>
     <% end -%>
     <div class="row small-up-4">
       <div class="column">
