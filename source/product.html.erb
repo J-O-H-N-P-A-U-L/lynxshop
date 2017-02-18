@@ -38,10 +38,9 @@ title: product.productName
     </div>
   </div>
   <div class="medium-6 large-5 columns">
-    <h3>My Awesome Product</h3>
-    <p>Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque
-      faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus
-      in.</p>
+    <h3><%= product.productName %></h3>
+    <p><%= product.productDescription %></p>
+    <p><%= number_to_currency(product.price, :unit => "$") %></p>
 
     <label>Size
       <select>
@@ -171,31 +170,4 @@ title: product.productName
     </div>
   </div>
 </div>
-
-
-<div class="row text-center column">
-    <h1>
-      <%= product.productName %>
-    </h1>
-</div>
-
-<div class="row">
-  <div class="large-6 small-12 columns text-center">
-    <% product.image.each do |image| -%>
-        <%= image_tag(image.url, :alt => image.title, class: "thumbnail")%>
-    <% end -%>
-    <br />
-    <%= snipcart_button product, "Add to cart" %>
-  </div>
-
-  <div class="large-6 small-12 columns">
-    <p>
-      <%= product.productDescription %>
-    </p>
-    <div>
-      <%= number_to_currency(product.price, :unit => "$") %>
-    </div>
-  </div>
-</div>
-
 
