@@ -38,9 +38,7 @@ title: My awesome website
       <% p = elem[1] %>
       <div class="column">
         <a href='<%= "products/#{p.slug}.html" %>'>
-          <% p.image.each do |image| -%>
-              <%= image_tag(image.url, :alt => image.title, :class => "thumbnail") %>
-          <% end -%>
+              <%= image_tag(image.first.url, :alt => image.title, :class => "thumbnail") %>
         </a>
         <h5><%= p.productName %></h5>
         <p><%= number_to_currency(p.price, :unit => "$") %></p>
