@@ -33,7 +33,7 @@ title: lynxshop.tk
 <div class="row small-up-2 large-up-4">
   <% data.contentful.product.each do |elem| %>
       <% p = elem[1] %>
-      <% if p.categories.first.title == 'Game' %>
+      <% if p.categories.first.title == 'Console' %>
       <div class="column">
         <a href='<%= "products/#{p.slug}.html" %>'>
           <%= image_tag(p.image.first.url, :alt => p.image.first.title, :class => "thumbnail") %>
@@ -63,36 +63,19 @@ title: lynxshop.tk
     <p>$400</p>
     <a href="#" class="button small expanded hollow">Buy</a>
   </div>
-  <div class="column">
-    <img class="thumbnail" src="https://placehold.it/300x400">
-    <h5>Nulla At Nulla Justo, Eget</h5>
-    <p>$400</p>
-    <a href="#" class="button small expanded hollow">Buy</a>
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="https://placehold.it/300x400">
-    <h5>Nulla At Nulla Justo, Eget</h5>
-    <p>$400</p>
-    <a href="#" class="button small expanded hollow">Buy</a>
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="https://placehold.it/300x400">
-    <h5>Nulla At Nulla Justo, Eget</h5>
-    <p>$400</p>
-    <a href="#" class="button small expanded hollow">Buy</a>
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="https://placehold.it/300x400">
-    <h5>Nulla At Nulla Justo, Eget</h5>
-    <p>$400</p>
-    <a href="#" class="button small expanded hollow">Buy</a>
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="https://placehold.it/300x400">
-    <h5>Nulla At Nulla Justo, Eget</h5>
-    <p>$400</p>
-    <a href="#" class="button small expanded hollow">Buy</a>
-  </div>
+  <% data.contentful.product.each do |elem| %>
+      <% p = elem[1] %>
+      <% if p.categories.first.title == 'Console' %>
+          <div class="column">
+            <a href='<%= "products/#{p.slug}.html" %>'>
+              <%= image_tag(p.image.first.url, :alt => p.image.first.title, :class => "thumbnail") %>
+            </a>
+            <h5><%= p.productName %></h5>
+            <p><%= number_to_currency(p.price, :unit => "$") %></p>
+            <%= snipcart_button p, "Buy Now" %>
+          </div>
+      <% end %>
+  <% end %>
 </div>
 <hr>
 <div class="row">
