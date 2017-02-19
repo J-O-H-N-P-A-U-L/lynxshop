@@ -27,13 +27,13 @@ title: lynxshop.tk
   </nav>
 </div>
 <div class="row column text-center">
-  <h2>Buy Atari Lynx Systems</h2>
+  <h2>Buy an Atari Lynx Console</h2>
   <hr>
 </div>
 <div class="row small-up-2 large-up-4">
   <% data.contentful.product.each do |elem| %>
       <% p = elem[1] %>
-      <% if p.categories.first.title == 'Console' %>
+      <% if p.categories.first.title == 'Game' %>
       <div class="column">
         <a href='<%= "products/#{p.slug}.html" %>'>
           <%= image_tag(p.image.first.url, :alt => p.image.first.title, :class => "thumbnail") %>
