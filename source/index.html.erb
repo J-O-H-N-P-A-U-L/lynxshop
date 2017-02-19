@@ -65,7 +65,7 @@ title: lynxshop.tk
   </div>
   <% data.contentful.product.each do |elem| %>
       <% p = elem[1] %>
-      <% if p.categories.first.title == 'Console' %>
+      <% if p.categories.first.title == 'Game' %>
           <div class="column">
             <a href='<%= "products/#{p.slug}.html" %>'>
               <%= image_tag(p.image.first.url, :alt => p.image.first.title, :class => "thumbnail") %>
