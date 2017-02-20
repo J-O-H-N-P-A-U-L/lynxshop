@@ -39,6 +39,9 @@ GEM
       middleman-core (~> 3.3)
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.0.1)
+    dotenv-rails (2.0.1)
+      dotenv (= 2.0.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -149,10 +152,11 @@ PLATFORMS
 
 DEPENDENCIES
   contentful_middleman
+  dotenv-rails
   middleman (~> 3.3.7)
   middleman-livereload (~> 3.1.0)
   tzinfo-data
   wdm (~> 0.1.0)
 
 BUNDLED WITH
-   1.14.3
+   1.14.4
