@@ -80,94 +80,61 @@ title: lynxshop.tk
 <hr>
 <div class="row">
   <div class="medium-4 columns">
-    <h4>More Games</h4>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
+    <h4>Memorabilia</h4>
+    <% data.contentful.product.each do |elem| %>
+        <% p = elem[1] %>
+        <% if p.categories.first.title == 'clothing' %>
+            <div class="media-object">
+              <div class="media-object-section">
+                <a href='<%= "products/#{p.slug}.html" %>'>
+                <%= image_tag(p.image.first.url, :alt => p.image.first.title, :class => "thumbnail") %>
+                </a>
+              </div>
+              <div class="media-object-section">
+                <h5><%= p.productName %></h5>
+                <p><%= number_to_currency(p.price, :unit => "$") %></p>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
   </div>
   <div class="medium-4 columns">
-    <h4>More Games</h4>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
+    <h4>Memorabilia</h4>
+    <% data.contentful.product.each do |elem| %>
+        <% p = elem[1] %>
+        <% if p.categories.first.title == 'clothing' %>
+            <div class="media-object">
+              <div class="media-object-section">
+                <a href='<%= "products/#{p.slug}.html" %>'>
+                  <%= image_tag(p.image.first.url, :alt => p.image.first.title, :class => "thumbnail") %>
+                </a>
+              </div>
+              <div class="media-object-section">
+                <h5><%= p.productName %></h5>
+                <p><%= number_to_currency(p.price, :unit => "$") %></p>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
   </div>
   <div class="medium-4 columns">
-    <h4>More Games</h4>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
-    <div class="media-object">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://placehold.it/100x100">
-      </div>
-      <div class="media-object-section">
-        <h5>Nunc Eu Ullamcorper Orci</h5>
-        <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-      </div>
-    </div>
+    <h4>Memorabilia</h4>
+    <% data.contentful.product.each do |elem| %>
+        <% p = elem[1] %>
+        <% if p.categories.first.title == 'clothing' %>
+            <div class="media-object">
+              <div class="media-object-section">
+                <a href='<%= "products/#{p.slug}.html" %>'>
+                  <%= image_tag(p.image.first.url, :alt => p.image.first.title, :class => "thumbnail") %>
+                </a>
+              </div>
+              <div class="media-object-section">
+                <h5><%= p.productName %></h5>
+                <p><%= number_to_currency(p.price, :unit => "$") %></p>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
   </div>
 </div>
 
