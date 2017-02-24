@@ -38,14 +38,19 @@ title: lynxshop.tk
     <h3><%= product.productName %></h3>
     <p><%= product.productDescription %></p>
     <p><%= number_to_currency(product.price, :unit => "$") %></p>
-    <label>Size
-      <select>
-        <option value="husker">Small</option>
-        <option value="starbuck">Medium</option>
-        <option value="hotdog">Large</option>
-        <option value="apollo">Yeti</option>
-      </select>
+    <% if product.sizetypecolor %>
+    <label>Size/Type/Color
+    <select>
+    <% if product.sizetypecolor %>
+    <p><%= values = product.sizetypecolor.split(',')%></p>
+        <% values.each do |value| %>
+            <option value="<%= value %>"><%= value %></option>
+        <% end %>
+      <% end %>
+    </select>
     </label>
+    <% end %>
+
     <div class="row">
       <div class="small-3 columns">
         <label for="middle-label" class="middle">Quantity</label>
