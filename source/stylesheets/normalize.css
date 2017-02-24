@@ -410,3 +410,6 @@ table {
         padding-right: 86px; }
     .top-bar-left ul {
         float: right; } }
+
+.top-bar {
+    text-align: center; }
